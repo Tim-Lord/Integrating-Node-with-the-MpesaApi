@@ -1,12 +1,13 @@
 // Lipa Na Mpesa Access Token Middleware
 
 const axios = require("axios");
+const config = require("config");
 
 const auth = async (req, res, next) => {
   const url =
     "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
-  const consumer_key = "FNWCwpsTmIguAvGyyh0qUQBqkAQRMXSe";
-  const consumer_secret = "eskafaUZ8JbScsci";
+  const consumer_key = config.get("lnmConsumerKey");
+  const consumer_secret = config.get("lnmConsumerSecret");
   const auth =
     "Basic " +
     Buffer.from(consumer_key + ":" + consumer_secret).toString("base64");
