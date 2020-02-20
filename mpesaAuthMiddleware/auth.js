@@ -1,3 +1,5 @@
+// Lipa Na Mpesa Access Token Middleware
+
 const axios = require("axios");
 
 const auth = async (req, res, next) => {

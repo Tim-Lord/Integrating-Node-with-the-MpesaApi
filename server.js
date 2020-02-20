@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 9000;
 app.use(express.json({ extended: true }));
 
 // Routes
-app.use("/api/test", require("./routes/home"));
+app.use("/api/lnm", require("./routes/lnm"));
+app.use("/api/c2b", require("./routes/c2b"));
 
 app.listen(PORT, err => {
   if (err) console.error(err.message);
